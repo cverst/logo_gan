@@ -45,14 +45,12 @@ class LogoItem(scrapy.Item):
 
 
 class LogoSpider(scrapy.Spider):
-    """The spider retrieves logos of Wikipedia entries of companies in the Forbes
-    2000 (2021) list. The Wikipedia URLs constructed from the Forbes 2000
-    company names are not always leading to the corporation, and not all
-    Wikipedia entries follow the scraping scheme used here. About 700 out of
-    2000 companies therefore have no logo retrieved. Catching and correcting
-    the errors is tedious so we accept the smaller, decently sized dataset.
-    The list of images is manually checked for and pruned of erroneous images
-    (e.g., buildings, all black images).
+    """A spider that retrieves company logos from Wikipedia.
+    
+    Wikipedia URLs are reconstructed for companies in the Forbes 2000 (year
+    2021) list. These URLs do not always lead to the company's WIkipedia entry
+    and not all Wikipedia entries follow the same HTML scheme. Errors will be
+    raised for these companies.
 
     Args:
         scrapy.Spider: inherits from scrapy.Spider class
