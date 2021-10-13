@@ -133,3 +133,4 @@ dmypy.json
 
 # Data directory
 logo_scraper/full/
+data/
